@@ -1,0 +1,6 @@
+.env
+data/cache/
+__pycache__/
+.pytest_cache/
+*.pyc
+tmp_cams.grib
