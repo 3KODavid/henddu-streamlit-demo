@@ -1,0 +1,9 @@
+.env
+.env.txt
+data/cache/
+__pycache__/
+.pytest_cache/
+*.pyc
+tmp_cams.grib
+tmp_cams.grib.*
+~$*.docx
