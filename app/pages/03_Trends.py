@@ -5,6 +5,10 @@ from __future__ import annotations
 import pandas as pd
 import streamlit as st
 
+from app.bootstrap import ensure_project_root_on_path
+
+ensure_project_root_on_path()
+
 from src.ui.charts import build_timeseries_figure
 from src.ui.data_access import get_indicator_daily_data
 from src.ui.filters import render_global_filters

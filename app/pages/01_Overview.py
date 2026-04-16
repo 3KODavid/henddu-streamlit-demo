@@ -4,6 +4,10 @@ from __future__ import annotations
 
 import streamlit as st
 
+from app.bootstrap import ensure_project_root_on_path
+
+ensure_project_root_on_path()
+
 from src.processing.prepare.kpis import build_kpis
 from src.processing.prepare.rankings import build_top_exposed_regions
 from src.ui.charts import build_top_regions_figure

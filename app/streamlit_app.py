@@ -4,6 +4,10 @@ from __future__ import annotations
 
 import streamlit as st
 
+from app.bootstrap import ensure_project_root_on_path
+
+ensure_project_root_on_path()
+
 from src.config.settings import get_settings
 from src.utils.logging import configure_logging
 
