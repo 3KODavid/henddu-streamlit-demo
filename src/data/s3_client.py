@@ -23,6 +23,11 @@ class S3Client:
         session_kwargs = {}
         if settings.aws_profile:
             session_kwargs["profile_name"] = settings.aws_profile
+        if settings.aws_access_key_id and settings.aws_secret_access_key:
+            session_kwargs["aws_access_key_id"] = settings.aws_access_key_id
+            session_kwargs["aws_secret_access_key"] = settings.aws_secret_access_key
+        if settings.aws_session_token:
+            session_kwargs["aws_session_token"] = settings.aws_session_token
 
         session = boto3.Session(**session_kwargs)
         self.bucket = settings.s3_bucket
@@ -49,4 +54,3 @@ class S3Client:
 
         logger.info("Fetched s3://%s/%s", self.bucket, key)
         return BytesIO(response["Body"].read())
-
