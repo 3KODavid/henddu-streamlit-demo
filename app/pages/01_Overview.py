@@ -2,11 +2,14 @@
 
 from __future__ import annotations
 
+import sys
+from pathlib import Path
+
 import streamlit as st
 
-from app.bootstrap import ensure_project_root_on_path
-
-ensure_project_root_on_path()
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
 
 from src.processing.prepare.kpis import build_kpis
 from src.processing.prepare.rankings import build_top_exposed_regions
